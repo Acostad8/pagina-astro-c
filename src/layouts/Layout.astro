@@ -15,37 +15,189 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		
 	</head>
 	<body>
-		<slot />
+		<!-- <slot /> -->
+		<header>
+			<div class="container">
+				<div class="flex-menu">
+					<img
+						src="https://store.akamai.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016"
+						alt=""
+					/>
+					<menu>
+						<li><a href="#">Tienda</a></li>
+						<li><a href="#">Comunidad</a></li>
+						<li><a href="#">Acerca de</a></li>
+						<li><a href="#">Soporte</a></li>
+					</menu>
+				</div>
+				<div class="menu-rigth">
+					<a href="#" class="btn-download">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="size-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+							></path>
+						</svg>
+						Intalar Steam
+					</a>
+					<a href="#">Iniciar Sesion</a>
+					|
+					<a href="#">Idioma</a>
+				</div>
+			</div>
+		</header>
+
+		<div class="banner">
+
+		</div>
+
+<!-- 
+		se poner container para que tambien tenga las propiedades del container -->
+		<div class="left-menu">
+
+		</div>
+		<div class="banner-2 container">
+			
+
+		</div>
+		
+
+		<div class="banner-3">
+
+		</div>
+
+
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+
+<style>
+	html,
+	body {
+		padding: 0;
+		margin: 0;
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+	header {
+		height: 80px;
+		background-color: #161d24;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	.container {
+		max-width: 1200px;
+		background-color: orange;
+		margin: 0 auto;
+		/* primer valor arriba y abajo, segundo valor derecha y izquierda */
+	}
+
+	.flex-menu {
+		width: 60%;
+		display: flex;
+		height: 80px;
+		align-items: center;
+		float: left;
+		color: white;
+		font-family: sans-serif;
+		text-transform: uppercase;
+	}
+
+	.flex-menu img {
+		width: 160px;
+	}
+
+	.flex-menu a {
+		color: rgb(221, 214, 214);
+		text-decoration: none;
+		font-weight: 600;
+		/* para poner la letra en negrita */
+	}
+
+	.flex-menu a:hover {
+		color: white;
+	}
+
+	.flex-menu li {
+		list-style: none;
+		display: inline-block;
+		/* elementos uno al lado del otro */
+		margin-left: 10px;
+		/* separar los elementos del menu */
+	}
+	.menu-rigth {
+		color: rgb(221, 214, 214);
+		float: left;
+		font-family: sans-serif;
+		width: 40%;
+		margin-top: 8px;
+		/* para que el boto se separe de la parte de arriba  */
+	}
+
+	.menu-rigth a {
+		text-decoration: none;
+		color: rgb(221, 214, 214);
+		margin: 0 6px;
+	}
+	.btn-download {
+		color: white;
+		background-color: #789806;
+		display: inline-block;
+		padding: 6px 12px;
+		font-family: sans-serif;
+		text-decoration: none;
+		display: inline-flex;
+		gap: 8px;
+		/* el icono toma solo el ancho del boton para centrarse */
+		align-items: center;
+		/* centrar el boton y el texto */
+	}
+	.btn-download:hover {
+		background-color: #bdd75e;
+	}
+
+	.btn-download svg {
+		width: 18px;
+	}
+
+	.banner{
+		background-color: orangered;
+		height: 360px;
+	}
+
+/* 
+	se pone posicion relativa al padre para que el hijo tome los limites 
+	del padre en posicion absoluta */
+
+	.banner-2{
+		/* position: relative; */
+		background-color: purple;
+		height: 240px;
+	}
+
+	.left-menu{
+		background-color: pink;
+		width: 180px;
+		height: 360px;
+		position: sticky;
+		/* para que sea flotante */
+		z-index: 10;
+		left: -180px;
+		/* para que salga de los limites del padre */
+
+
+	}
+
+	.banner-3{
+		height: 1200px;
+		background-color: turquoise;
+		
+
 	}
 </style>
